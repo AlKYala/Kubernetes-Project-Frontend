@@ -7,6 +7,7 @@ import { Entries } from './components/entries';
 import { Grid, Stack } from '@mui/material';
 
 function App() {
+
   return (
     <>
     <Grid container alignItems={"center"} justifyContent={"center"}>
