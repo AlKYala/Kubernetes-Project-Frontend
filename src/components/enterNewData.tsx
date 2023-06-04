@@ -15,6 +15,8 @@ export function EnterNewData() {
 
     const [loading, setLoading] = useState('');
 
+    //fetch('http://localhost:8080/api/example').then();
+
     async function sendData() {
         const payload = {id: '', name: name, email: email, phone: phone};
 
@@ -33,7 +35,7 @@ export function EnterNewData() {
                 <TextField value={name} onChange={(event) => setName(event.target.value)} id="outlined-basic" label="name" variant="outlined" />
                 <TextField value={email} onChange={(event) => setEmail(event.target.value)} id="filled-basic" label="email" variant="filled" />
                 <TextField value={phone} onChange={(event) => setPhone(event.target.value)} id="standard-basic" label="phone" variant="standard" />
-                <Button variant="contained">Add Data</Button>
+                <Button onClick={() => {sendData()}} variant="contained">Add Data</Button>
             </Grid> 
       );
 }
