@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ExampleModel, ExampleModelControllerApi } from "../api";
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { Box, CircularProgress, Grid } from "@mui/material";
-import { useStore } from "zustand";
+import { useStore } from "../state/store";
 
 
 export function Entries() {
@@ -16,7 +16,7 @@ export function Entries() {
 
     useEffect(() => {
       setLoading(true);
-        fetchEntries();
+        fetchItems();
       setLoading(false);
     }, []);
 
@@ -41,17 +41,6 @@ export function Entries() {
           editable: true,
         }
       ];
-
-    async function fetchEntries(): Promise<void> {
-        setLoading(true);
-
-        //const result = await api.findAll();
-
-        //console.log(result);
-
-        setLoading(false);
-
-    }
 
     return (
         <>
