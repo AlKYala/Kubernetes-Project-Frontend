@@ -14,8 +14,13 @@ export const useStore = create<State>((set, get) => ({
   addItem: async (item: ExampleModel) => {
     console.log("adding: ", item);
     await api.create({exampleModel: item});
+    const items = get().items;
+    set({items: [...items, item]});
   },
   async fetchItems() {
+
+    console.log("FETCHING");
+
     const response = await api.findAll();
 
     console.log(response);

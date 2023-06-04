@@ -21,8 +21,6 @@ export function EnterNewData() {
         const payload = {id: '', name: name, email: email, phone: phone};
 
         addItem(payload);
-
-        fetchItems();
     }
 
     return (

@@ -13,7 +13,7 @@
  */
 
 
-export const BASE_PATH = "http://localhost:8080".replace(/\/+$/, "");
+export const BASE_PATH = process.env.REACT_APP_BACKEND_URL!.replace(/\/+$/, "");
 
 export interface ConfigurationParameters {
     basePath?: string; // override base path
