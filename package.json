@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "build-dev": "env-cmd -f .env.local react-scripts build",
     "build-local-docker": "env-cmd -f .env.local-docker react-scripts build",
-    "build-local-kubernetes": "env-cmd -f .env.local-docker react-scripts build",
+    "build-local-kubernetes": "env-cmd -f .env.local-kubernetes react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate-api": "openapi-generator-cli generate -i ./src/openapi/spec.json -g typescript-fetch -o ./src/api"
