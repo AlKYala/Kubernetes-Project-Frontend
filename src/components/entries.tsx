@@ -5,20 +5,23 @@ import { Box, CircularProgress, Grid } from "@mui/material";
 import { useStore } from "../state/store";
 
 
-export async function Entries() {
+export function Entries() {
 
     const [loading, setLoading] = useState<boolean>(false);
 
     const {items, fetchItems, addItem} = useStore();
 
 
-    const test = await fetch('/api/example');
+    async function testCall() {
+      const test = await fetch('/api/example');
 
-    console.log("TEST RESULT: ", test);
+      console.log("TEST RESULT: ", test);
+    }
 
     const api : ExampleModelControllerApi = new ExampleModelControllerApi();
 
     useEffect(() => {
+      testCall()
       setLoading(true);
         fetchItems();
       setLoading(false);
